@@ -5,8 +5,8 @@
 
 ## Table of Contents
   1. [Type](#type)
+  1. [References](#references)
   1. [Check Type](#check-type)
-  1. [Reference](#reference)
   1. [Function](#function)
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
@@ -97,13 +97,17 @@
     }
     testThis(); //undefined
     ```
-## Check Type
-  > จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
-    - typeof(....)
-    - Object.prototype.toString.call(....)
   
-## Reference
+## References
   1. dsfsdf
+
+## Check Type
+  จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
+  - typeof(....)
+  - Object.prototype.toString.call(....)
+  ```javascript
+    
+  ```
 
 ## Function
   1. dsfsdf
