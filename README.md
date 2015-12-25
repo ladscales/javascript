@@ -6,8 +6,6 @@
   1. [Functional](#functional)
   1. [Test]
 
-  **[⬆ กลับไปด้านบน](#table-of-contents)**
-
 ## Type
   1. dsfsdf
 
