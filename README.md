@@ -97,7 +97,7 @@
     }
     testThis(); //undefined
     ```
-## Comparison Operators & Equality
+## Check Type
   loadding
   
 ## Reference
