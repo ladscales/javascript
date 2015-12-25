@@ -103,6 +103,12 @@
   ```javascript
     var company = "Heng Indy Anvil";
   ```
+  
+  เวลาเราเรียก company ค่าของมันก็คือ "Heng Indy Anvil" นั้นเอง 
+  คราวนี้การประกาศตัวแปรมันมีทั้งหมดอยู่ 3 อย่าง ด้วยกัน คือ var, const, let ซึ่ง const กับ let มาใน ecmascript 6
+  - var
+  - const
+  - let
 
 ## Check Type
   จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
