@@ -72,7 +72,7 @@
        * เขียยใบสั่ง talkDate ขึ้นมา
        * โดยให้มีการทำงาน คือ แสดงค่า วันที่ปัจจุบันออกมา
        */
-      console.log(new Date())
+      console.log(new Date());
     }
     /**
      * ใช้ใบสั่ง talkDate ให้ทำงานได้
@@ -90,16 +90,19 @@
     this ตรงปกติ ถ้าเป็นภาษา VB เป็น Me ซึ่งดูการใช้คำมันสื่อมาก คือ เป็นค่าของมันเอง เหมือนกับเวลาคนทั้งโลกจะกำหนดชื่อเรียกเราเป็นชื่อจริง แต่พอเข้ามาในบ้าน คนในบ้านอาจจะกำหนดชื่อเราเป็นชื่อเล่นในการเรียกใช้ก็ได้ หรือถ้าคนในบ้านไม่ได้กำหนดในการเรียก ก็ใช้ชื่อจริงนั้นแหละในการเรียกหา
     จากตัวอย่างข้างใต้จะเห็นว่า this ที่ใช้ครั้งแรก คือ ระยะข้อมูลสูงสุดของหน้า Page จึงเป็น window ออกมา พอเราสร้าง Function ขึ้นมา แล้วเรียก this ออกมา ซึ่งตามปกติ this ที่เรียกออกมานั้น คือ ระยะข้อมูลภายใน testThis แล้ว ซึ่งมันยังไม่มีการกำหนดค่าจึงออกมาเป็น undefined 
     ```javascript
-    console.log(this)
+    console.log(this);
     //Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
     function testThis() {
-      console.log(this)
+      console.log(this);
     }
     testThis(); //undefined
     ```
   
 ## References
-  1. dsfsdf
+  การประกาศตัวแปร หลายคนที่ไม่เคยเขียนโปรแกรมมาอ่านคงไม่เข้าใจตัวแปรคืออะไร มันคือป้ายชื่อนั้นเอง! ตัวอย่าง
+  ```javascript
+    var company = "Heng Indy Anvil";
+  ```
 
 ## Check Type
   จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
