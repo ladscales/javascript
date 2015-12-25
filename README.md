@@ -1,6 +1,7 @@
 # Javascript Basic() {
 
 ## Table of Contents
+
   1. [Type](#type)
   2. [Reference](#reference)
   3. [Function](#function)
