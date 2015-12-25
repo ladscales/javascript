@@ -106,10 +106,43 @@
   
   เวลาเราเรียก company ค่าของมันก็คือ "Heng Indy Anvil" นั้นเอง 
   คราวนี้การประกาศตัวแปรมันมีทั้งหมดอยู่ 3 อย่าง ด้วยกัน คือ var, const, let ซึ่ง const กับ let มาใน ecmascript 6
-  - var
-  - const
-  - let
-
+  - var เป็นการประกาศแบบกึ่ง global คือ ถ้าประกาศไม่ได้อยู่ภายใต้ function จะเข้าไปอยู่ใน window แต่ถ้าประกาศภายใต้ function ก็ใช้ได้แค่ใน function
+  - const เป็นการประกาศค่าคงที่ คือ ไม่สามารถเปลี่ยนค่าได้อีกแล้ว ที่เหลือก็เหมือน var 
+  - let เป็นการประกาศค่าคล้าย ๆ var แต่แตกต่างตรงที่ไม่ได้มีส่วนเขี่ยวข้องใน window และ ถ้าใช้ประกาศ ใน if, for, while จะมองเป็นคนละตัวกับ var 
+  ```javascript
+  console.log(window)     //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
+  console.log(this)       //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
+  window.hia = 'good';
+  console.log(window.hia) //good
+  
+  var var1 = 'VV';
+  var var2 = 'VV2';
+  const con1 = 'CC';
+  let let1 = 'LL';
+  console.log(window.var1) //VV
+  console.log(window.con1) //CC
+  console.log(window.let1) //undefined
+  console.log(var1)       //VV
+  console.log(var2)       //VV2
+  console.log(con1)       //CC
+  console.log(let1)       //LL
+  
+  function fn() {
+    var var2 = 'vvvv2';
+    console.log(window)   //window
+    console.log(this)     //undefined
+    console.log(var1)     //VV
+    console.log(var2)     //vvvv2
+    console.log(con1)     //CC
+    console.log(let1)     //LL
+    let let2 = 'LL2';
+    console.log(let2)     //LL2
+  }
+  fn(); 
+  console.log(var2)       //VV2
+  //console.log(let2)     //Error let2 is not defined ..... not work
+  ```
+  
 ## Check Type
   จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
   - typeof(....)
