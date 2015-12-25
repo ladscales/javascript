@@ -73,7 +73,10 @@
        */
       console.log(new Date())
     }
-    talkDate(); ใช้ใบสั่ง talkDate ให้ทำงานได้
+    /**
+     * ใช้ใบสั่ง talkDate ให้ทำงานได้
+     */
+    talkDate();
     ```
   
 ## Reference
