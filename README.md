@@ -97,7 +97,9 @@
     }
     testThis(); //undefined
     ```
-  
+    
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
 ## References
   การประกาศตัวแปร หลายคนที่ไม่เคยเขียนโปรแกรมมาอ่านคงไม่เข้าใจตัวแปรคืออะไร มันคือป้ายชื่อนั้นเอง! ตัวอย่าง
   ```javascript
@@ -143,7 +145,9 @@
   console.log(var2)       //VV2
   //console.log(let2)     //Error let2 is not defined ..... not work
   ```
-  
+
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
 ## Check Type
   จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
   - typeof(....)
@@ -152,7 +156,11 @@
     
   ```
 
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
 ## Function
   1. dsfsdf
-  
+
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
 # };
