@@ -5,6 +5,7 @@
 
 ## Table of Contents
   1. [Type](#type)
+  1. [Check Type](#check-type)
   1. [Reference](#reference)
   1. [Function](#function)
 
@@ -96,6 +97,8 @@
     }
     testThis(); //undefined
     ```
+## Comparison Operators & Equality
+  loadding
   
 ## Reference
   1. dsfsdf
