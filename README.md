@@ -57,6 +57,25 @@
     }
     ```
     
+  1. [global]() (window)
+    หลายคนอาจจะสับสนว่าทำไมมี global มีนเป็นชื่อเรียกของตัวแปรอิสระอยู่บนสุดของพวก Class แต่ในนี้ไม่ใช่ละครับ ทุกหน้า Page จะมีตัวแปร window อยู่เสมอ ๆ ซึ่ง window มีคุณสมบัติเป็น object แต่ชื่อเรียกจริง ๆ เมื่อทำงานตรวจสอบ Type จะได้เป็น Global
+    ```javascript
+    Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
+    ```
+    
+  1. [function]() (บทบาท, การทำงาน)
+    เป็นรูปแบบในการสั่งทำงาน เหมือนใบสั่งนะครับเมื่อเราประกาศว่ามีใบสั่งแบบนี้นะ แล้วเอามาใช้ ดังนั้นการทำงานในใบสั่งจึงเกิดขึ้น
+    ```javascript
+    function talkDate() {
+      /**
+       * เขียยใบสั่ง talkDate ขึ้นมา
+       * โดยให้มีการทำงาน คือ แสดงค่า วันที่ปัจจุบันออกมา
+       */
+      console.log(new Date())
+    }
+    talkDate(); ใช้ใบสั่ง talkDate ให้ทำงานได้
+    ```
+  
 ## Reference
   1. dsfsdf
 
