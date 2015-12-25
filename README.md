@@ -122,28 +122,28 @@
   var var2 = 'VV2';
   const con1 = 'CC';
   let let1 = 'LL';
-  console.log(window.var1) //VV
-  console.log(window.con1) //CC
-  console.log(window.let1) //undefined
-  console.log(var1)       //VV
-  console.log(var2)       //VV2
-  console.log(con1)       //CC
-  console.log(let1)       //LL
+  console.log(window.var1); //VV
+  console.log(window.con1); //CC
+  console.log(window.let1); //undefined
+  console.log(var1);      //VV
+  console.log(var2);      //VV2
+  console.log(con1);      //CC
+  console.log(let1);      //LL
   
   function fn() {
     var var2 = 'vvvv2';
-    console.log(window)   //window
-    console.log(this)     //undefined
-    console.log(var1)     //VV
-    console.log(var2)     //vvvv2
-    console.log(con1)     //CC
-    console.log(let1)     //LL
+    console.log(window);  //window
+    console.log(this);    //undefined
+    console.log(var1);    //VV
+    console.log(var2);    //vvvv2
+    console.log(con1);    //CC
+    console.log(let1);    //LL
     let let2 = 'LL2';
-    console.log(let2)     //LL2
+    console.log(let2);    //LL2
   }
   fn(); 
-  console.log(var2)       //VV2
-  //console.log(let2)     //Error let2 is not defined ..... not work
+  console.log(var2);      //VV2
+  //console.log(let2);    //Error let2 is not defined ..... not work
   ```
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
