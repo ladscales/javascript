@@ -209,7 +209,8 @@
        return fn12;
     }
     testfn = fn11();  
-    testfn();   //v1 is not defined 
+    testfn();   //v1 is not defined
+    
     function fn13(){
        var v1 = "variable";
        return fn12;
