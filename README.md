@@ -145,6 +145,78 @@
   console.log(var2);      //VV2
   //console.log(let2);    //Error let2 is not defined ..... not work
   ```
+  
+  จากตัวอย่างข้างใต้นี้จะเห็นความสัมพันธ์ตัวแปรในแบบ function เป็นอย่างดี จะเห็นว่า fn1 ถึง fn9 ทำงานอย่างไม่มี error เพราะว่า sub function ข้างในนั้น ถูกกำหนดค่าเอาไว้ให้ผูกกับ v1 ซึ่งเป็นของ function นั้น ๆ แต่จะเห็นว่า fn11 ถึง fn13 ทำงานไม่สมบูรณ์ เพราะ sun function(fn12) ข้างใต้นั้นไม่ได้ถูกกำหนดไว้ภายในอย่างแท้จริงจึงไม่สามารถเรียกใช้ v1 ได้...ผมไม่รู้ศัพท์ทางการคืออะไร(-_-") แต่ผมเรียกว่า "ตัวแปรที่ไม่ตาย" เพราอะไรผมถึงกล่าวแบบนั้น มันเป็น เพราะว่า main function นั้นส่ง sub function ออกมาแล้วจะมีบางคนคิดว่า main function คงตายไปแล้ว ซึ่งความจริงมันไม่ใช่ การที่เราส่ง sub function ออกมานั้นมันจะมีการผูก main function อยู่ด้วย ดังนั้น main function จึงยังไม่ตายหายไป แต่เราจะเห็นว่า fn12 นั้น ไม่ได้เป็น sub function แท้จริง จึงไม่ได้มีการผูกกับ main function (จริง ๆ มันคือเรื่อง stack)
+  ```javascript
+    var testfn = null;
+    
+    function fn1(){
+      var v1 = "variable";
+      function fn2(){
+        return v1;
+      }
+      return fn2;
+    }
+    testfn = fn1();  
+    testfn();   //variable
+    
+    function fn3(){
+      var v1 = "variable";
+      var fn4 = function(){
+        return v1;
+      }
+      return fn4;
+    }
+    testfn = fn3();  
+    testfn();   //variable
+    
+    var fn6 = ""
+    function fn5(){
+      var v1 = "variable";
+      fn6 = function(){
+        return v1;
+      }
+      return fn6;
+    }
+    testfn = fn5();  
+    testfn();   //variable
+    
+    var fn7 = function(){
+      var v1 = "variable";
+      fn8 = function(){
+        return v1;
+      }
+      return fn8;
+    }
+    testfn = fn7();  
+    testfn();   //variable
+    
+    var fn9 = function(){
+      var v1 = "variable";
+      var fn10 = function(){
+        return v1;
+      }
+      return fn10;
+    }
+    testfn = fn9();  
+    testfn();   //variable
+    
+    var fn12 = function(){
+      return v1;
+    }
+    var fn11 = function(){
+       var v1 = "variable";
+       return fn12;
+    }
+    testfn = fn11();  
+    testfn();   //v1 is not defined 
+    function fn13(){
+       var v1 = "variable";
+       return fn12;
+    }
+    testfn = fn13();  
+    testfn();   //v1 is not defined 
+  ```
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
 
