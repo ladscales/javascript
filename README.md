@@ -114,8 +114,8 @@
   - let เป็นการประกาศค่าคล้าย ๆ var แต่แตกต่างตรงที่ไม่ได้มีส่วนเขี่ยวข้องใน window และ ถ้าใช้ประกาศ ใน if, for, while จะมองเป็นคนละตัวกับ var 
   ตัวอย่างข้างใต้ จะสามารถดูการไหลของข้อมูลได้ดีพอสมควรนะครับ let บาง Browser ยังไม่รองรับนะครับ อาจจะเอาไป ทดลองไม่เพื่อได้ ถ้าต้องการทดลอง[แนะนำ บทความที่2](http://plnkr.co/edit/xL2gCWFyfSvNFXyjzJoQ?p=preview)
   ```javascript
-  console.log(window)     //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
-  console.log(this)       //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
+  console.log(window);    //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
+  console.log(this);      //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
   window.hia = 'good';
   console.log(window.hia) //good
   
@@ -228,8 +228,8 @@
   - Object.prototype.toString.call(....)
 
   ```javascript
-    console.log(typeof("Heng Indy Anvil"))  //string
-    console.log(Object.prototype.toString.call("Heng Indy Anvil"))  //[Object String]
+    console.log(typeof("Heng Indy Anvil")); //string
+    console.log(Object.prototype.toString.call("Heng Indy Anvil")); //[Object String]
   ```
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
@@ -238,8 +238,16 @@
   เรื่องนี้เป็นเกี่ยวกับเครื่องหมายนะครับ ซึ่งก็แบ่งได้อีก 4 ประเภท
   1. เครื่องหมายทางคณิตศาสตร์ ได้แก่ +(บวก), -(ลบ), *(คูณ) และ /(หาร)... โดยลำดับความสำคัญ คือ (), *, /, + และ - ตามลำดับ
   2. เครื่องหมายเพิ่มลดค่า ได้แก่ ++(เพิ่มขึ้นไป1), --(ลดลงไป1), +=3(เพิ่มขึ้นไป3), -=(ลดลงไป3)
-  3. เครื่องหมายเปรียบเทียบ ได้แก่ ==(เท่ากับ), ===(เท่ากับทุกประการ), >(มากกว่า), <(น้อยหว่า), >=(มากกว่าหรือเท่ากับ), <=(น้อยกว่าหรือเท่ากับ), !=(ไม่เท่ากับ), !==(ไม่เท่ากับทุกประการ)
-  4. เครื่องหมายตรรก ได้แก่ &&(และ), ||(หรือ), !(ไม่)
+  3. เครื่องหมายเปรียบเทียบ ได้แก่ ==(เท่ากับ), ===(เท่ากับทุกประการ), >(มากกว่า), <(น้อยกว่า), >=(มากกว่าหรือเท่ากับ), <=(น้อยกว่าหรือเท่ากับ), !=(ไม่เท่ากับ), !==(ไม่เท่ากับทุกประการ)
+  4. เครื่องหมายตรรก ได้แก่ &&(และ), ||(หรือ), !(ไม่)... ในหัวข้อ 4 นี้ต้องทำความเข้าใจหน่อยนะครับ คือ คำว่าและให้มองเป็นตัวคูณ, คำว่าหรือให้มองเป็นตัวบวก, คำว่าไม่ให้คิดเป็นตรงข้าม, trueให้มองเป็น1, falseให้มิงเป็น0 ตัวอย่าง
+    4.1. 1*1 คิดเป็น 1
+    4.2. 1*0 คิดเป็น 0
+    4.3. 0*0 คิดเป็น 0 (จาก1-3 ทำการคิดได้ว่าถ้ามี 0(false) เพียงตัวเดียว จะออกมาเป็น 0(false)
+    4.4. 1+1 คิดเป็น 1
+    4.5. 1+0 คิดเป็น 1
+    4.6. 0+0 คิดเป็น 0 (จาก4-6 ทำการคิดได้ว่าถ้ามี 1(true) เพียงตัวเดียว จะออกมาเป็น 1(true)
+    4.7. !0  คิดเป็น 1
+    4.8. !1  คิดเป็น 0 (จาก7-8 ทำการคิดได้ว่าถ้ามี !(ตรงข้าม) ให้สลับจาก 1เป็น0, 0เป็น1
   ทั้งหมดที่กล่าวมา เป็นเพียงส่วนหนึ่งเท่านั้นเอง ซึ่งได้ใช้กันบ่อย ๆ อยู่แล้ว ซึ่งผู้ที่สนใจที่พึ่งจะเริ่มต้นเขียนโปรแกรม อาจจะสับสนตรงเครื่องหมายเปรียบเทียบและตรรก โดยผู้ที่มีพื้นฐานทางคณิตศาสตร์คงเข้าใจอะไรไม่ยาก มาดูตัวอย่างกันเลย
   ```javascript
     console.log(1+2);     //3  
@@ -251,15 +259,15 @@
     
     var v1 = 0;
     v1++;
-    console.log(v1)    //1
+    console.log(v1);  //1
     v1++;
-    console.log(v1)    //2
+    console.log(v1);  //2
     v1--;
-    console.log(v1)    //1
+    console.log(v1);  //1
     v1+=6;
-    console.log(v1)    //7
+    console.log(v1);  //7
     v1-=10;
-    console.log(v1)    //-3
+    console.log(v1);  //-3
     
     console.log('10'==10);  //true
     console.log('1'==10);   //false
