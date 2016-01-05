@@ -226,6 +226,7 @@
   จากหัวข้อ Type ที่ผ่านไป ที่ทุกคนสงสัยผมรู้ชนิดมันมาได้ยังไง มันมีการตรวจสอบอยู่ 2 อย่าง เท่าที่รู้ คือ
   - typeof(....)
   - Object.prototype.toString.call(....)
+
   ```javascript
     console.log(typeof("Heng Indy Anvil"))  //string
     console.log(Object.prototype.toString.call("Heng Indy Anvil"))  //[Object String]
