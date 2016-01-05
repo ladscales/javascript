@@ -260,7 +260,16 @@
     v1-=10;
     console.log(v1)    //-3
     
-    
+    console.log('10'==10);  //true
+    console.log('1'==10);   //false
+    console.log('10'===10); //false
+    console.log(10===10);   //true
+    console.log(5>10);      //true
+    console.log(5<10);      //false
+    console.log(5>=5);      //true
+    console.log(5<=4);      //true
+    console.log('5'!=5);    //false
+    console.log(5!==5);     //true
   ```
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
