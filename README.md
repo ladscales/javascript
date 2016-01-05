@@ -279,6 +279,15 @@
     console.log(5<=4);      //true
     console.log('5'!=5);    //false
     console.log(5!==5);     //true
+    
+    console.log(true && true);    //true
+    console.log(true && false);   //false
+    console.log(false && false);  //false
+    console.log(true || true);    //true
+    console.log(true || false);   //true
+    console.log(false || false);  //false
+    console.log(!true);           //false
+    console.log(!false);          //true
   ```
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
