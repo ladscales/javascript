@@ -120,34 +120,51 @@
   console.log(window);    //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
   console.log(this);      //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
   window.hia = 'good';
-  console.log(window.hia) //good
+  console.log(window.hia); //good
   
   var var1 = 'VV';
   var var2 = 'VV2';
   const con1 = 'CC';
   let let1 = 'LL';
   console.log(window.var1); //VV
-  console.log(window.con1); //CC
+  console.log(window.var2); //VV2
+  console.log(window.con1); //undefined
   console.log(window.let1); //undefined
   console.log(var1);      //VV
   console.log(var2);      //VV2
-  console.log(con1);      //CC
-  console.log(let1);      //LL
+  console.log(con1);      //Error con1 is not defined ..... not work
+  console.log(let1);      //Error let1 is not defined ..... not work
+  
+  if (1==1) {
+    let let1 = 'llll';
+    console.log(let1);    //llll
+  }
+  console.log(let1);      //Error let1 is not defined ..... not work
+  
+  for(let let1=0;let1<2;let1++){
+    console.log(let1);    
+  }   //results per cycle : 0 1
+  
+  for(let let1=0;let1<2;let1++){
+    let let1 = 99;
+    console.log(let1);    
+  }   //results per cycle : 99 99
   
   function fn() {
     var var2 = 'vvvv2';
+    const con1 = 'cccc';
+    let let1 = 'llllll';
     console.log(window);  //window
-    console.log(this);    //undefined
+    console.log(this);    //window
     console.log(var1);    //VV
     console.log(var2);    //vvvv2
-    console.log(con1);    //CC
-    console.log(let1);    //LL
-    let let2 = 'LL2';
-    console.log(let2);    //LL2
+    console.log(con1);    //cccc
+    console.log(let1);    //llllll
   }
   fn(); 
+  
   console.log(var2);      //VV2
-  //console.log(let2);    //Error let2 is not defined ..... not work
+  console.log(let1);      //Error let1 is not defined ..... not work
   ```
   
   จากตัวอย่างข้างใต้นี้จะเห็นความสัมพันธ์ตัวแปรในแบบ function เป็นอย่างดี จะเห็นว่า fn1 ถึง fn9 ทำงานอย่างไม่มี error เพราะว่า sub function ข้างในนั้น ถูกกำหนดค่าเอาไว้ให้ผูกกับ v1 ซึ่งเป็นของ function นั้น ๆ แต่จะเห็นว่า fn11 ถึง fn13 ทำงานไม่สมบูรณ์ เพราะ sun function(fn12) ข้างใต้นั้นไม่ได้ถูกกำหนดไว้ภายในอย่างแท้จริงจึงไม่สามารถเรียกใช้ v1 ได้...ผมไม่รู้ศัพท์ทางการคืออะไร(-_-") แต่ผมเรียกว่า "ตัวแปรที่ไม่ตาย" เพราอะไรผมถึงกล่าวแบบนั้น มันเป็น เพราะว่า main function นั้นส่ง sub function ออกมาแล้วจะมีบางคนคิดว่า main function คงตายไปแล้ว ซึ่งความจริงมันไม่ใช่ การที่เราส่ง sub function ออกมานั้นมันจะมีการผูก main function อยู่ด้วย ดังนั้น main function จึงยังไม่ตายหายไป แต่เราจะเห็นว่า fn12 นั้น ไม่ได้เป็น sub function แท้จริง จึงไม่ได้มีการผูกกับ main function (จริง ๆ มันคือเรื่อง stack)
