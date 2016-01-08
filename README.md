@@ -115,7 +115,7 @@
   - var เป็นการประกาศแบบกึ่ง global คือ ถ้าประกาศไม่ได้อยู่ภายใต้ function จะเข้าไปอยู่ใน window แต่ถ้าประกาศภายใต้ function ก็ใช้ได้แค่ใน function
   - const เป็นการประกาศค่าคงที่ คือ ไม่สามารถเปลี่ยนค่าได้อีกแล้ว สามารถประกาศใช้ได้แค่ใน if, for, while
   - let เป็นการประกาศค่าคล้าย ๆ const แต่แตกต่างตรงที่ไม่ใช่ค่าคงที่ คือ สามารถเปลี่ยนแปลงค่าได้
-  ตัวอย่างข้างใต้ จะสามารถดูการไหลของข้อมูลได้ดีพอสมควรนะครับ let บาง Browser ยังไม่รองรับนะครับ อาจจะเอาไป ทดลองไม่เพื่อได้ ถ้าต้องการทดลอง[แนะนำ บทความที่2](http://plnkr.co/edit/xL2gCWFyfSvNFXyjzJoQ?p=preview)
+  ตัวอย่างข้างใต้ จะสามารถดูการไหลของข้อมูลได้ดีพอสมควรนะครับ let บาง Browser ยังไม่รองรับนะแนะนำ ณ วันที่ (2016/01/08) คือ Browser EDGE
   ```javascript
   console.log(window);    //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
   console.log(this);      //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
