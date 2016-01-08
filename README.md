@@ -90,16 +90,15 @@
   1. [undefined](#types) (ไม่มีค่า)
     ตรงตัวตรง ไม่มีข้อมูล ไม่มีค่า
 
-  1. [this](#types) (ค่า ณ จุดนั้น, ที่จริงมันก็เป็น object นี่แหละ)
-    this ตรงปกติ ถ้าเป็นภาษา VB เป็น Me ซึ่งดูการใช้คำมันสื่อมาก คือ เป็นค่าของมันเอง เหมือนกับเวลาคนทั้งโลกจะกำหนดชื่อเรียกเราเป็นชื่อจริง แต่พอเข้ามาในบ้าน คนในบ้านอาจจะกำหนดชื่อเราเป็นชื่อเล่นในการเรียกใช้ก็ได้ หรือถ้าคนในบ้านไม่ได้กำหนดในการเรียก ก็ใช้ชื่อจริงนั้นแหละในการเรียกหา
-    จากตัวอย่างข้างใต้จะเห็นว่า this ที่ใช้ครั้งแรก คือ ระยะข้อมูลสูงสุดของหน้า Page จึงเป็น window ออกมา พอเราสร้าง Function ขึ้นมา แล้วเรียก this ออกมา ซึ่งตามปกติ this ที่เรียกออกมานั้น คือ ระยะข้อมูลภายใน testThis แล้ว ซึ่งมันยังไม่มีการกำหนดค่าจึงออกมาเป็น undefined 
+  1. [this](#types) (ก็ window นั้นแหละ)
+    this ตรงปกติ ถ้าเป็นภาษา VB เป็น Me ซึ่งดูการใช้คำมันสื่อมาก คือ เป็นค่าของมันเอง(เป้นค่าของหน้า Page นั้นแหละ)
     ```javascript
     console.log(this);
     //Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
     function testThis() {
       console.log(this);
     }
-    testThis(); //undefined
+    testThis(); //Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
     ```
     
 **[⬆ กลับไปด้านบน](#table-of-contents)**
@@ -113,7 +112,7 @@
   เวลาเราเรียก company ค่าของมันก็คือ "Heng Indy Anvil" นั้นเอง 
   คราวนี้การประกาศตัวแปรมันมีทั้งหมดอยู่ 3 อย่าง ด้วยกัน คือ var, const, let ซึ่ง const กับ let มาใน ecmascript 6
   - var เป็นการประกาศแบบกึ่ง global คือ ถ้าประกาศไม่ได้อยู่ภายใต้ function จะเข้าไปอยู่ใน window แต่ถ้าประกาศภายใต้ function ก็ใช้ได้แค่ใน function
-  - const เป็นการประกาศค่าคงที่ คือ ไม่สามารถเปลี่ยนค่าได้อีกแล้ว สามารถประกาศใช้ได้แค่ใน if, for, while
+  - const เป็นการประกาศค่าคงที่ คือ ไม่สามารถเปลี่ยนค่าได้อีกแล้ว สามารถประกาศใช้ได้แค่ใน if, for, while แต่ถ้าต้องการให้อยู่ในระดับเดียวกับ var บนสุดหรือ window นั้น ให้ใช้ Object.defineProperty เดี๋ยวในตัวอย่างจะมีให้ดูนะครับ
   - let เป็นการประกาศค่าคล้าย ๆ const แต่แตกต่างตรงที่ไม่ใช่ค่าคงที่ คือ สามารถเปลี่ยนแปลงค่าได้
   ตัวอย่างข้างใต้ จะสามารถดูการไหลของข้อมูลได้ดีพอสมควรนะครับ let บาง Browser ยังไม่รองรับนะแนะนำ ณ วันที่ (2016/01/08) คือ Browser EDGE
   ```javascript
@@ -125,14 +124,24 @@
   var var1 = 'VV';
   var var2 = 'VV2';
   const con1 = 'CC';
+  Object.defineProperty(typeof global === "object" ? global : window, "con2", {
+    value:        3.141593,
+    enumerable:   true,
+    writable:     false,
+    configurable: false
+  });
   let let1 = 'LL';
   console.log(window.var1); //VV
   console.log(window.var2); //VV2
   console.log(window.con1); //undefined
+  console.log(window.con2); //3.141593
   console.log(window.let1); //undefined
   console.log(var1);      //VV
   console.log(var2);      //VV2
   console.log(con1);      //Error con1 is not defined ..... not work
+  console.log(con2);      //3.141593
+  con2 = 123456;
+  console.log(con2);      //3.141593
   console.log(let1);      //Error let1 is not defined ..... not work
   
   if (1==1) {
