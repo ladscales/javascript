@@ -12,6 +12,8 @@
   1. [Condition](#condition)
   1. [Loop](#loop)
   1. [Function](#function)
+  1. [Function 2](#function-2)
+  1. [Functional Programming](#functional-programming)
   1. [Class](#class)
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
@@ -494,8 +496,18 @@
   
 **[⬆ กลับไปด้านบน](#table-of-contents)**
 
+## Function 2
+  รอ... (ก็ยังคุยเรื่อง parameter ให้มากขึ้น ตัวแปร Byval, Byref เป็นยังไง ตัวไหนเข้าข่ายแบบไหน การประยุกต์ใส่ property ก็ยังได้ด้วย เป็นอะไรที่แบบว่า ดูมันไม่ค่อยลื่นๆตาเท่าไร แรกๆจะคิดว่ามันบ้าไปแล้ว แต่ตอนนี้ผมชินละ มองในแง่ดี เป็นแบบนี้ก็ดีเหมือนกัน)
+  
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
+## Functional Programming
+  รอ...
+
+**[⬆ กลับไปด้านบน](#table-of-contents)**
+
 ## Class
-  ติดตามต่อไปนะครับ ^^ ขะแต่งงานแล้ว ขอพักสมองก่อน ไว้เจอหลัง ประมาณวันที่ 10/01/2016
+  เรื่องนี้ต้องขอข้ามไปก่อนนะครับ ยังไม่รู้ว่าจะหา browser ตัวไหนเล่นดี
 
 **[⬆ กลับไปด้านบน](#table-of-contents)**
 
