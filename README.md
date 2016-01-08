@@ -1,7 +1,8 @@
 # Javascript Basic() {
 
 **บทความ Javascript เบื้องต้น ใช้ภาษาที่น่าจะเข้าใจกันได้ง่าย By [Heng Indy Anvil](https://www.facebook.com/LaDscaLEs)
-> บทความเหมาะสำหรับผู้ที่ยังไม่มีความรู้หรือยังไม่ค่อยมีความรู้ทางด้าน Programming               โดยตั้งใจว่าจะเขียนปูพื้นไปเรื่อย ๆ ก่อน จนคิดว่าพอสมควรแล้ว จะขยับไปทางด้าน angularjs
+> บทความเหมาะสำหรับผู้ที่ยังไม่มีความรู้หรือยังไม่ค่อยมีความรู้ทางด้าน Programming โดยตั้งใจว่าจะเขียนปูพื้นไปเรื่อย ๆ ก่อน จนคิดว่าพอสมควรแล้ว จะขยับไปทางด้าน angularjs
+> แนะนำความผิดพลาดของบทความได้นะครับ เพราะ ตอนทำนี้อยู่ผสม es6 เข้าไปด้วย ตอนยังไม่มี browserไหน support 100% อาจจะเกิดความคาดเคลื่อนได้
 
 ## Table of Contents
   1. [Types](#types)
@@ -91,7 +92,7 @@
     ตรงตัวตรง ไม่มีข้อมูล ไม่มีค่า
 
   1. [this](#types) (ก็ window นั้นแหละ)
-    this ตรงปกติ ถ้าเป็นภาษา VB เป็น Me ซึ่งดูการใช้คำมันสื่อมาก คือ เป็นค่าของมันเอง(เป้นค่าของหน้า Page นั้นแหละ)
+    this ตรงปกติ ถ้าเป็นภาษา VB เป็น Me ซึ่งดูการใช้คำมันสื่อมาก คือ เป็นค่าของมันเอง(เป็นค่าของหน้า Page นั้นแหละ) ตอนนี้ยังไม่ได้ test this ใน class เลย เพราะ รู้สึกยังมีปัญหา Syntax error อยู่ อาจจะเกิดจาก ยังไม่ support ที่คาดหวังไว้คือถ้าใน class ใช้ this แล้วจะตัวใน class เอง
     ```javascript
     console.log(this);
     //Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
