@@ -489,7 +489,7 @@
     showSuccess( calculatorValue(5, 10) ); //50
     //OR
     success = calculatorValue(5, 10);
-    showSuccess(success); //150
+    showSuccess(success); //50
     
     showSuccess( calculatorValue(15, 10) ); //150
   ```
