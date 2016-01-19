@@ -66,7 +66,7 @@
     ```
     
   1. [global](#types) (window)
-    หลายคนอาจจะสับสนว่าทำไมมี global มีนเป็นชื่อเรียกของตัวแปรอิสระอยู่บนสุดของพวก Class แต่ในนี้ไม่ใช่ทุกหน้า Page จะมีตัวแปร window อยู่เสมอ ๆ ซึ่ง window มีคุณสมบัติเป็น object แต่ชื่อเรียกจริง ๆ เมื่อทำงานตรวจสอบ Type จะได้เป็น Global
+    หลายคนอาจจะสับสนว่าทำไมมี global มีนเป็นชื่อเรียกของตัวแปรอิสระอยู่บนสุดของพวก Class แต่ในนี้ไม่ใช่ ทุกหน้า Page จะมีตัวแปร window อยู่เสมอ ๆ ซึ่ง window มีคุณสมบัติเป็น object แต่ชื่อเรียกจริง ๆ เมื่อทำงานตรวจสอบ Type จะได้เป็น Global
     ```javascript
     Window {external: Object, chrome: Object, document: document, CustomElements: Object, _perfRefForUserTimingPolyfill: Performance…}
     ```
@@ -166,8 +166,8 @@
     var var2 = 'vvvv2';
     const con1 = 'cccc';
     let let1 = 'llllll';
-    console.log(window);  //window
-    console.log(this);    //window
+    console.log(window);  //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
+    console.log(this);    //Window {external: Object, chrome: Object, document: document, angular: Object, ng339: 3…}
     console.log(var1);    //VV
     console.log(var2);    //vvvv2
     console.log(con1);    //cccc
@@ -307,12 +307,13 @@
     console.log('1'==10);   //false
     console.log('10'===10); //false
     console.log(10===10);   //true
-    console.log(5>10);      //true
-    console.log(5<10);      //false
+    console.log(5>10);      //false
+    console.log(5<10);      //true
     console.log(5>=5);      //true
     console.log(5<=4);      //true
     console.log('5'!=5);    //false
-    console.log(5!==5);     //true
+    console.log('5'!==5);   //true
+    console.log(5!==5);     //false
     
     console.log(true && true);    //true
     console.log(true && false);   //false
